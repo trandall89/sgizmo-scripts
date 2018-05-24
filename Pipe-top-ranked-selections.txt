@@ -1,0 +1,13 @@
+%%vals = sgapiGetValue(2);
+%%optionTitles = sgapiGetQuestionOptions(2); 
+%%arr = array();
+
+sgapiASort(%%vals);
+
+foreach (%%vals as %%optionsku => %%rank){
+  if (%%rank < 4){
+  sgapiArrayPush(%%arr,%%optionTitles{%%optionsku});
+  }
+}
+
+sgapiSetPipeValues(10, %%arr);
